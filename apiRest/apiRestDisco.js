@@ -28,6 +28,7 @@ app.get("/discos",
         {
             let sql;
             sql = "SELECT * FROM discos";
+            console.log(sql);
             connection.query(sql, function (err, result) 
             {
                 if (err){ 
@@ -96,7 +97,7 @@ app.put("/discos",
 
             let sql = "UPDATE discos SET titulo = COALESCE(?, titulo) , " + 
                        "interprete = COALESCE(?, interprete) , " + 
-                       "anyoPublicacion = COALESCE(?, anyoPublicacion)  WHERE id = ?";
+                       "anyoPublicacion = COALESCE(?, anyoPublicacion)  WHERE id = COALESCE(?, id)";
             console.log(sql); 
             connection.query(sql, params,function (err, result) 
             {

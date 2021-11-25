@@ -9,12 +9,27 @@ import { FormularioMDComponent } from './pages/formulario-md/formulario-md.compo
 import { FormularioTDComponent } from './pages/formulario-td/formulario-td.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { DataComponent } from './pages/data/data.component';
+import { MDFormAddComponent } from './pages/mdform-add/mdform-add.component';
+import { TDFormAddComponent } from './pages/tdform-add/tdform-add.component';
+import { TDFormDelComponent } from './pages/tdform-del/tdform-del.component';
+import { MDFormDelComponent } from './pages/mdform-del/mdform-del.component';
+import { MDFormModComponent } from './pages/mdform-mod/mdform-mod.component';
+import { TDFormModComponent } from './pages/tdform-mod/tdform-mod.component';
 
 
-// Angualr Material
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+// Angualar Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+// Bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +38,13 @@ import {MatMenuModule} from '@angular/material/menu';
     FormularioMDComponent,
     FormularioTDComponent,
     MenuComponent,
-    DataComponent
+    DataComponent,
+    MDFormAddComponent,
+    TDFormAddComponent,
+    TDFormDelComponent,
+    MDFormDelComponent,
+    MDFormModComponent,
+    TDFormModComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +53,13 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

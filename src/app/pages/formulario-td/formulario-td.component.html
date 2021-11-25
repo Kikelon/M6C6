@@ -1,1 +1,27 @@
-<p>formulario-td works!</p>
+<div class="mainContainer">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="inputsFormTD">
+        <div class="form-group">
+            <label>Título</label>
+            <input type="text" name="titulo" class="form-control" [(ngModel)]="disco.titulo" />
+        </div>
+        <div class="form-group">
+            <label>Interprete</label>
+            <input type="text" name="interprete" class="form-control" [(ngModel)]="disco.interprete" />
+        </div>
+        <div class="form-group">
+            <label>Año de Publicación</label>
+            <input type="text" name="anyoPublicacion" class="form-control" [(ngModel)]="disco.anyoPublicacion" />
+        </div>
+        <div class="botonera">
+            <div class="form-group">
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Modificar</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Borrar</button>
+            </div>
+        </div>
+    </form>
+</div>
