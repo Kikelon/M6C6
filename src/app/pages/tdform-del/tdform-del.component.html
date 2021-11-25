@@ -1,0 +1,17 @@
+<div class="mainContainer">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="inputsFormTD">
+        <div class="form-group">
+            <label>id</label>
+            <input type="number" name="id" class="form-control" [(ngModel)]="disco.id" #id="ngModel"
+            [ngClass]="{'is-invalid': (id.dirty || id.touched) && id.invalid}" autocomplete="off" value="" required/>
+            <div class="invalid-feedback" *ngIf="(id.dirty || id.touched) && id.invalid">
+                <p *ngIf="id.errors?.['required']">El título es necesario</p>
+            </div>
+        </div>
+        <div class="botonera">
+            <div class="form-group">
+                <button class="btn btn-primary" type="reset" disable="userForm.invalid" (click)="onSubmit(userForm)">Borrar</button>
+            </div>
+        </div>
+    </form>
+</div>

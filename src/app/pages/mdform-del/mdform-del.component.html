@@ -1,0 +1,14 @@
+<div class="mainContainer">
+    <form [formGroup]="formularioMD" class="inputsFormMD">
+        <div class="form-group">
+            <label>id</label>
+            <input type="text" class="form-control" formControlName="id" [ngClass]="{'is-invalid': !formularioMD.get('id').valid}">
+            <div *ngIf="!formularioMD.get('id').valid" class="invalid-feedback" ></div>
+        </div>    
+       <div class="botonera">
+            <div class="form-group">
+                <button class="btn btn-danger btn-block" (click)="delDisco()" [disabled]="formularioMD.invalid">Borrar</button>
+            </div>
+        </div>
+    </form>
+</div>

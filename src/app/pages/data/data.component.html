@@ -1,30 +1,27 @@
 <div class="contenedorPrincipal">
-    <!-- <p>DATA</p> -->
-    <ng-container *ngIf="discos.length>0; else isEmpty">
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Intérprete</th>
-                    <th scope="col">Año de publicación</th>
-                </tr>
-            </thead>
-            <tbody>
-                <ng-container *ngFor="let disco of discos; let i = index; even as isEven;">
-                    <tr [ngClass]="{ 'even' : isEven }">
-                        <th scope="row">{{ disco.id }}</th>
-                        <td>{{ disco.titulo }}</td>
-                        <td>{{ disco.interprete }}</td>
-                        <td>{{ disco.anyoPublicacion }}</td>
-                    </tr>
-                </ng-container>
-            </tbody>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="tablaMaterial">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> id. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef> titulo </th>
+                <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="anyoPublicacion">
+                <th mat-header-cell *matHeaderCellDef> anyoPublicacion </th>
+                <td mat-cell *matCellDef="let element"> {{element.anyoPublicacion}} </td>
+            </ng-container>
+            <ng-container matColumnDef="interprete">
+                <th mat-header-cell *matHeaderCellDef> interprete </th>
+                <td mat-cell *matCellDef="let element"> {{element.interprete}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-    </ng-container>
-    <ng-template #isEmpty>
-        <div>
-            <h1>No hay discos que mostrar en la Base de Datos</h1>
+        <div class="botonera">
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="refrescar()">Refrescar</button>
+            </div>
         </div>
-    </ng-template>
 </div>

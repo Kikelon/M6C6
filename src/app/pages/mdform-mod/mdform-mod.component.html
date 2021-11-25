@@ -2,7 +2,7 @@
     <form [formGroup]="formularioMD" class="inputsFormMD">
         <div class="form-group">
             <label>id</label>
-            <input type="text" class="form-control" formControlName="id" [ngClass]="{'is-invalid': !formularioMD.get('titulo').valid}">
+            <input type="text" class="form-control" formControlName="id" [ngClass]="{'is-invalid': !formularioMD.get('id').valid}">
             <div *ngIf="!formularioMD.get('id').valid" class="invalid-feedback" ></div>
         </div>    
         <div class="form-group">
@@ -12,23 +12,17 @@
         </div>    
         <div class="form-group">
             <label>Interprete</label>
-            <input type="text" class="form-control" formControlName="interprete" [ngClass]="{'is-invalid': !formularioMD.get('titulo').valid}">
+            <input type="text" class="form-control" formControlName="interprete" [ngClass]="{'is-invalid': !formularioMD.get('interprete').valid}">
             <div *ngIf="!formularioMD.get('interprete').valid" class="invalid-feedback" ></div>
         </div>    
         <div class="form-group">
             <label>Año de Publicación</label>
-            <input type="text" class="form-control" formControlName="anyoPublicacion" [ngClass]="{'is-invalid': !formularioMD.get('titulo').valid}">
+            <input type="text" class="form-control" formControlName="anyoPublicacion" [ngClass]="{'is-invalid': !formularioMD.get('anyoPublicacion').valid}">
             <div *ngIf="!formularioMD.get('anyoPublicacion').valid" class="invalid-feedback" >Los discos de vinilo se editaron a partir de 1902 hasta nuestros días</div>
         </div>    
         <div class="botonera">
             <div class="form-group">
-                <button class="btn btn-danger btn-block" (click)="addDisco()" [disabled]="formularioMD.invalid">Guardar</button>
-            </div>
-            <div class="form-group">
                 <button class="btn btn-danger btn-block" (click)="modDisco()" [disabled]="formularioMD.invalid">Modificar</button>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-danger btn-block" (click)="delDisco()" [disabled]="formularioMD.invalid">Borrar</button>
             </div>
         </div>
     </form>
